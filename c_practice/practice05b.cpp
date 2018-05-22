@@ -14,7 +14,7 @@ int main(int argc, char **argv){
   int face2_freq[7]={0};
   int i, face1, face2;
   srand(time(NULL));
-  //TApplication app( "app", &argc, argv );
+  // TApplication app( "app", &argc, argv );
   TFile file( "practice05.root", "RECREATE" );
   //TCanvas *c1 = new TCanvas("c1");
   TH1I *hist_sum= new TH1I("hist_sum", "sum of 2 dice", 11 ,1.5, 12.5);
@@ -45,8 +45,8 @@ int main(int argc, char **argv){
   //hist2->Draw();
   file.Write();
   file.Close();
-  //c1->Draw();
-  //c1->WaitPrimitive();
+  // c1->Draw();
+  // c1->WaitPrimitive();
 
   printf("サイコロの和\n");
   for (i = 2; i <=12; i++) {

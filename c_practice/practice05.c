@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include <TFile.h>
-#include <TH1.h>
 
 #define TRY_NUM 36000
 
@@ -19,18 +17,18 @@ main(){
     ++sum_freq[face1+face2];
   }
 
-  // printf("サイコロの和\n");
-  // for (i = 2; i <=12; i++) {
-  //   printf("%4d%10d\n", i, sum_freq[i] );
-  // }
-  //
-  // printf("サイコロ1\n");
-  // for (i = 1; i <=6; i++) {
-  //   printf("%4d%10d\n", i, face1_freq[i] );
-  // }
-  //
-  // printf("サイコロ2\n");
-  // for (i = 1; i <=6; i++) {
-  //   printf("%4d%10d\n", i, face2_freq[i] );
-  // }
+  printf("サイコロの和\n");
+  for (i = 2; i <=12; i++) {
+    printf("%4d%10d\n", i, sum_freq[i] );
+  }
+
+  printf("サイコロ1\n");
+  for (i = 1; i <=6; i++) {
+    printf("%4d%10d\n", i, face1_freq[i] );
+  }
+
+  printf("サイコロ2\n");
+  for (i = 1; i <=6; i++) {
+    printf("%4d%10d\n", i, face2_freq[i] );
+  }
 }
