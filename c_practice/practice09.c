@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#include <time.h>
 
 int init_prime_check(int);
 int *make_prime_array(int);
@@ -12,7 +13,12 @@ int main(void){
     printf("Nまでの素数の数を確かめたい！\n");
     printf("N :");
     scanf("%d",&num);
-    print_prime_num(num, make_prime_array(num));
+    clock_t start = clock();
+    prime_array = make_prime_array(num);
+    print_prime_num(num, prime_array);
+    clock_t end = clock();
+    printf("%.2f秒かかりました\n",(double)(end-start)/CLOCKS_PER_SEC);
+    free(prime_array);
 
     return 0;
 }
@@ -25,7 +31,7 @@ int init_prime_check(int n){
     int check=1;
     check_num = (int)pow(n, 0.5);
 
-    
+
     for(int i = 2; i <= check_num; i++){
         r = n%i;
         if(r==0){
@@ -34,7 +40,7 @@ int init_prime_check(int n){
         }
     }
     return check;
-    
+
 }
 
 int *make_prime_array(int n){
@@ -43,7 +49,7 @@ int *make_prime_array(int n){
     int *prime_array;
     check_max = (int)pow(n, 0.5);
     prime_array = (int *)malloc(sizeof(int)*(check_max-1));
-    
+
     for(int i =2 ; i <= check_max; i++){
         if(init_prime_check(i)==1){
             prime_array[i-2]=i;
@@ -53,7 +59,6 @@ int *make_prime_array(int n){
         }
     }
     return prime_array;
-    free(prime_array);
 
 }
 
@@ -82,8 +87,6 @@ void print_prime_num(int n, int *prime_array){
         }
     }
     printf("%dまでの素数の数は%d個です。\n",n,cnt);
-    
-    
+
+
 }
-
-

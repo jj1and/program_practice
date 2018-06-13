@@ -14,7 +14,7 @@ int main(void){
     float **pp;
     float *point1, *point2, *dim;
     float dist;
-    
+
     pp = set_points();
     point1 = pp[0];
     point2 = pp[1];
@@ -22,6 +22,8 @@ int main(void){
 
     dist = distance((int)*dim, point1, point2);
     printf("二点間の距離は %.4f です。\n", dist);
+    free(point1);
+    free(point2);
 
     return 0;
 }
@@ -54,7 +56,7 @@ float *get_point(int dim){
             ptr = strtok(NULL, ", ");
             if(ptr!=NULL){
                 if(cnt<dim){
-                    point[cnt] = strtof(ptr, NULL);   
+                    point[cnt] = strtof(ptr, NULL);
                 }
                 cnt++;
             }
@@ -69,7 +71,6 @@ float *get_point(int dim){
         while(getchar()!='\n');
     }while(flag==1);
     return point;
-    free(point);
 }
 
 float **set_points(void){
@@ -98,5 +99,5 @@ float **set_points(void){
     pt_array[1] = get_point((int)dim);
     pp = pt_array;
     return pp;
-    
+
 }
