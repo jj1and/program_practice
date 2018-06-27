@@ -17,7 +17,7 @@ class SchoolData{
         SchoolData(const char *file_name);
         void CalcMean(std::string subject);
         void CalcMax(std::string subject);
-        void CalcBenefit(void);
+        virtual void CalcPrivate(void);
         ~SchoolData();
 
 };

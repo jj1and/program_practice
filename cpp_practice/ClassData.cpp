@@ -14,7 +14,7 @@ void ClassData::DispClassData(void){
   std::printf("\n");
 }
 
-void ClassData::CalcClassProb(void){
+void ClassData::CalcPrivate(void){
   num_problems = class_num*1;
   std::cout << "クラス内の問題の数は" << num_problems << "です。" << std::endl;
 }

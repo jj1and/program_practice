@@ -9,7 +9,8 @@ int main(int argc, char const *argv[]) {
   const char *file_name="test.tsv";
 
   SchoolData kadai_school(file_name);
-  kadai_school.CalcBenefit();
+  kadai_school.CalcPrivate();
+  kadai_school.CalcMean("math");
 
   ClassData kadai_class(file_name);
   kadai_class.DispClassData();
@@ -20,6 +21,6 @@ int main(int argc, char const *argv[]) {
   kadai_class.CalcMax("math");
   kadai_class.CalcMax("physics");
   kadai_class.CalcMax("english");
-  kadai_class.CalcClassProb();
+  kadai_class.CalcPrivate();
   return 0;
 }

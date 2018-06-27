@@ -98,7 +98,7 @@ void SchoolData::CalcMax(std::string subject){
   }
 }
 
-void SchoolData::CalcBenefit(void){
+void SchoolData::CalcPrivate(void){
   benefit = class_num*100;
   std::cout << "利益は" << benefit << "です。" << std::endl;
 }

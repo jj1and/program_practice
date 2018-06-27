@@ -8,7 +8,7 @@ class ClassData : public SchoolData {
     int num_problems;
   public:
     ClassData(const char *file_name);
-    void CalcClassProb(void);
+    void CalcPrivate(void);
     void DispClassData(void);
 
 };
