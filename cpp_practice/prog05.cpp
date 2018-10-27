@@ -33,6 +33,7 @@ class D2 : public D1{
             cout << c << endl;
         };
 };
+
 int main(){
     D2 ob(1, 2, 3);
     ob.show();
